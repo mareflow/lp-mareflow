@@ -8,11 +8,11 @@
     <!-- Importação de Fonte: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons (para os ícones) -->
+    <!-- Lucide Icons (Biblioteca de ícones) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Google Tag Manager (Espaço reservado) -->
-    <!-- Cole seu código do GTM aqui -->
+    <!-- Google Tag Manager (Espaço para seu código) -->
+    <!-- Cole aqui seu script do GTM -->
 
     <style>
         :root {
@@ -75,7 +75,7 @@
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: clamp(32px, 5vw, 56px);
             font-weight: 700;
             margin-bottom: 24px;
             line-height: 1.1;
@@ -126,12 +126,13 @@
             transform: translateY(-2px);
         }
 
-        /* --- Stats --- */
+        /* --- Mini Stats (abaixo do botão) --- */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 40px;
+            gap: 20px;
+            max-width: 800px;
+            margin: 40px auto 0;
         }
 
         .stat-item {
@@ -144,7 +145,7 @@
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
             display: block;
         }
@@ -154,11 +155,11 @@
             font-size: 14px;
         }
 
-        /* --- Trust Section --- */
+        /* --- Seção de Confiança & Carrossel --- */
         .trust {
             padding: 80px 0;
-            background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%);
             text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%);
         }
 
         .trust h3 {
@@ -178,21 +179,58 @@
             color: var(--primary-blue);
         }
 
-        .shop-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
+        /* Estilo do Carrossel Infinito */
+        .logo-carousel {
+            overflow: hidden;
+            padding: 20px 0;
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
             margin-bottom: 60px;
         }
 
+        /* Efeito de desfoque nas laterais */
+        .logo-carousel::before,
+        .logo-carousel::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 15%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .logo-carousel::before { left: 0; top: 0; background: linear-gradient(to right, var(--bg-color), transparent); }
+        .logo-carousel::after { right: 0; top: 0; background: linear-gradient(to left, var(--bg-color), transparent); }
+
+        .logo-track {
+            display: flex;
+            width: calc(250px * 16); /* Ajustado para o dobro de itens */
+            animation: scroll 30s linear infinite;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
         .shop-tag {
+            flex-shrink: 0;
+            width: 230px;
+            margin: 0 10px;
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 24px;
+            padding: 18px;
             border-radius: 12px;
             color: var(--text-gray);
             font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 8)); } /* Move metade da lista total */
         }
 
         .big-stats {
@@ -201,7 +239,7 @@
             gap: 20px;
         }
 
-        /* --- Video Section --- */
+        /* --- Seção de Vídeo (VSL) --- */
         .video-section {
             padding: 80px 0;
             text-align: center;
@@ -209,7 +247,7 @@
 
         .video-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
             aspect-ratio: 16 / 9;
             background: var(--card-bg);
             border-radius: 20px;
@@ -221,6 +259,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .play-btn {
@@ -234,16 +273,18 @@
             color: var(--bg-color);
             margin-bottom: 20px;
             cursor: pointer;
+            transition: 0.3s;
         }
+        .play-btn:hover { transform: scale(1.1); }
 
         .video-info {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: 25px;
+            left: 25px;
             text-align: left;
         }
 
-        /* --- Solutions Section --- */
+        /* --- Seção Soluções --- */
         .solutions {
             padding: 100px 0;
         }
@@ -265,14 +306,15 @@
 
         .solution-card:hover {
             border-color: var(--primary-blue);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 174, 239, 0.1);
         }
 
         .sol-icon-box {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             background: rgba(0, 174, 239, 0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -290,268 +332,30 @@
             font-size: 15px;
         }
 
-        /* --- CTA Footer Section --- */
+        /* --- CTA Final --- */
         .cta-footer {
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 174, 239, 0.05) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 174, 239, 0.08) 100%);
         }
 
         .whatsapp-cta {
             background: var(--primary-blue);
             color: var(--bg-color);
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 18px;
+            padding: 18px 36px;
+            border-radius: 12px;
+            font-size: 20px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
             margin: 40px 0 15px;
-        }
-
-        /* --- Floating WhatsApp --- */
-        .float-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
             transition: 0.3s;
         }
+        .whatsapp-cta:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 174, 239, 0.3); }
 
-        .float-whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        .footer-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        /* --- Responsividade --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 38px; }
-            .hero-btns { flex-direction: column; }
-            .stats, .big-stats, .solutions-grid { grid-template-columns: 1fr; }
-            footer { flex-direction: column; gap: 20px; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header & Hero -->
-    <div class="container">
-        <header>
-            <img src="https://via.placeholder.com/150x50/0a1122/00aeef?text=Maré+Flow" alt="Logo Maré Flow" class="logo">
-        </header>
-
-        <section class="hero">
-            <div class="badge">
-                <i data-lucide="bot"></i> Consultoria em Tecnologia para Oficinas
-            </div>
-            <h1>Transforme sua oficina <br>com <span>Inteligência Artificial</span></h1>
-            <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados. Tudo que sua oficina mecânica precisa para crescer com tecnologia de ponta.</p>
-            
-            <div class="hero-btns">
-                <a href="#" class="btn btn-primary">Fale com um Especialista <i data-lucide="arrow-right"></i></a>
-                <a href="#" class="btn btn-outline">Conheça as Soluções</a>
-            </div>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <i data-lucide="zap" class="stat-icon"></i>
-                    <span class="stat-number">+50%</span>
-                    <span class="stat-label">Aumento em vendas</span>
-                </div>
-                <div class="stat-item">
-                    <i data-lucide="bot" class="stat-icon"></i>
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Atendimento IA</span>
-                </div>
-                <div class="stat-item">
-                    <i data-lucide="bar-chart-3" class="stat-icon"></i>
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Dados integrados</span>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Seção de Confiança -->
-    <section class="trust">
-        <div class="container">
-            <h3>Quem já confia na Maré Flow</h3>
-            <h2>Oficinas que já estão <span>crescendo com IA</span></h2>
-            
-            <div class="shop-list">
-                <div class="shop-tag">Auto Tech</div>
-                <div class="shop-tag">Auto Center Silva</div>
-                <div class="shop-tag">Mecânica Express</div>
-                <div class="shop-tag">Oficina do João</div>
-                <div class="shop-tag">Car Service Pro</div>
-                <div class="shop-tag">Auto Elétrica Master</div>
-                <div class="shop-tag">Garage Premium</div>
-                <div class="shop-tag">Mecânica Total</div>
-            </div>
-
-            <div class="big-stats">
-                <div class="stat-item">
-                    <span class="stat-number">+20</span>
-                    <span class="stat-label">Oficinas atendidas</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">+5k</span>
-                    <span class="stat-label">Clientes impactados</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">+R$2M</span>
-                    <span class="stat-label">Em vendas geradas</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Taxa de satisfação</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Vídeo -->
-    <section class="video-section">
-        <div class="container">
-            <p style="color: var(--primary-blue); font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 15px;">Veja como funciona</p>
-            <h2 style="font-size: 32px; margin-bottom: 20px;">Descubra como a IA pode <span>revolucionar <br>sua oficina</span></h2>
-            <p style="color: var(--text-gray);">Assista e entenda como estamos ajudando oficinas a faturar mais com menos esforço</p>
-
-            <!-- Troque a URL abaixo pelo seu link do vídeo (YouTube embed, etc) -->
-            <div class="video-container">
-                <div class="play-btn"><i data-lucide="play" fill="currentColor"></i></div>
-                <div class="video-info">
-                    <p style="font-size: 12px; color: var(--text-gray);">VSL • 5 min</p>
-                    <p style="font-weight: bold;">Como aumentamos o faturamento de oficinas em até 50%</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Soluções -->
-    <section class="solutions">
-        <div class="container">
-            <div style="text-align: center;">
-                <p style="color: var(--primary-blue); font-weight: bold; text-transform: uppercase; font-size: 14px; margin-bottom: 15px;">Nossas Soluções</p>
-                <h2 style="font-size: 36px;">Tecnologia completa para <br>sua <span>oficina mecânica</span></h2>
-                <p style="color: var(--text-gray); max-width: 600px; margin: 20px auto;">Combinamos inteligência artificial, marketing digital e sistemas personalizados para transformar a gestão da sua oficina.</p>
-            </div>
-
-            <div class="solutions-grid">
-                <!-- CRM -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="users"></i></div>
-                    <h4>CRM Inteligente</h4>
-                    <p>Gerencie clientes, histórico de serviços e relacionamentos de forma automatizada. Nunca mais perca uma oportunidade de venda.</p>
-                </div>
-                <!-- Atendente IA -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="bot"></i></div>
-                    <h4>Atendente de IA</h4>
-                    <p>Atendimento 24/7 via WhatsApp. Responda dúvidas, agende serviços e capture leads mesmo fora do horário comercial.</p>
-                </div>
-                <!-- Controle OS -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div>
-                    <h4>Controle de OS</h4>
-                    <p>Sistema completo para gerenciar ordens de serviço, peças, mão de obra e acompanhamento em tempo real.</p>
-                </div>
-                <!-- Dados -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div>
-                    <h4>Análise de Dados</h4>
-                    <p>Dashboards inteligentes que transformam seus dados em insights para tomar decisões mais estratégicas.</p>
-                </div>
-                <!-- Tráfego -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="target"></i></div>
-                    <h4>Tráfego Pago</h4>
-                    <p>Campanhas de marketing digital focadas em atrair novos clientes para sua oficina com ROI garantido.</p>
-                </div>
-                <!-- Design -->
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="palette"></i></div>
-                    <h4>Design & Identidade</h4>
-                    <p>Criação de identidade visual, posts para redes sociais e materiais de divulgação profissionais.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chamada Final -->
-    <section class="cta-footer">
-        <div class="container">
-            <h2 style="font-size: 42px;">Pronto para revolucionar <span>sua <br>oficina?</span></h2>
-            <p style="color: var(--text-gray); margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Agende uma conversa sem compromisso com nossos especialistas. Vamos analisar sua operação e mostrar como a tecnologia pode impulsionar seus resultados.</p>
-            
-            <a href="https://wa.me/SEU_NUMERO_AQUI" class="whatsapp-cta">
-                <i data-lucide="message-circle"></i> Falar pelo WhatsApp
-            </a>
-            <p style="font-size: 14px; color: var(--text-gray);">Resposta em menos de 2 horas • Sem compromisso</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="container">
-        <footer>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="https://via.placeholder.com/30x30/0a1122/00aeef?text=M" alt="Logo" style="width: 25px;">
-                <span>© 2026 Maré Flow. Todos os direitos reservados.</span>
-            </div>
-            <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="https://wa.me/SEU_NUMERO_AQUI">WhatsApp</a>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/SEU_NUMERO_AQUI" class="float-whatsapp" target="_blank">
-        <i data-lucide="message-circle" size="32"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script>
-        // Inicializa os ícones do Lucide
-        lucide.createIcons();
-
-        // Código para Pixel do Facebook (Espaço reservado)
-        /*
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'SEU_PIXEL_ID');
-        fbq('track', 'PageView');
-        */
-    </script>
-</body>
-</html>
+        /* --- Botão Flutuante do WhatsApp --- */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px
