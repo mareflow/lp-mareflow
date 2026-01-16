@@ -64,7 +64,6 @@
         .trust h3 { color: var(--primary-blue); text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
         .trust h2 { font-size: 36px; margin-bottom: 40px; }
 
-        /* Carrossel Infinito */
         .logo-carousel { 
             overflow: hidden; padding: 20px 0; position: relative; width: 100vw; 
             left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 60px;
@@ -75,15 +74,8 @@
         
         .logo-track { display: flex; width: calc(250px * 12); animation: scroll 30s linear infinite; }
         .logo-track:hover { animation-play-state: paused; }
-        
         .shop-tag { flex-shrink: 0; width: 250px; margin: 0 10px; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
-        
-        /* Estilo das logos dos clientes */
-        .client-logo { 
-            max-height: 50px; max-width: 190px; width: auto; height: auto; 
-            filter: grayscale(1) brightness(2.5); 
-            opacity: 0.7; transition: 0.3s; 
-        }
+        .client-logo { max-height: 50px; max-width: 190px; width: auto; height: auto; filter: grayscale(1) brightness(2.5); opacity: 0.7; transition: 0.3s; }
         .shop-tag:hover .client-logo { filter: grayscale(0) brightness(1); opacity: 1; }
 
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 6)); } }
@@ -102,13 +94,37 @@
         .solution-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
         .sol-icon { color: var(--primary-blue); margin-bottom: 24px; display: block; }
 
-        /* --- CTA & Footer --- */
-        .cta-section { padding: 120px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.05)); }
-        .whatsapp-cta-btn { background: var(--primary-blue); color: var(--bg-color); padding: 20px 40px; border-radius: 12px; font-size: 20px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 14px; margin-top: 30px; }
+        /* --- CTA Final (AGRESSIVO) --- */
+        .cta-section { 
+            padding: 140px 0; 
+            text-align: center; 
+            background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.08)); 
+        }
+        .cta-section h2 span { color: var(--primary-blue); }
+        
+        .whatsapp-cta-btn { 
+            background: var(--primary-blue); 
+            color: var(--bg-color); 
+            padding: 20px 40px; 
+            border-radius: 12px; 
+            font-size: 20px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 14px; 
+            margin-top: 35px; 
+            transition: 0.3s;
+        }
+        .whatsapp-cta-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 174, 239, 0.4); }
+
+        /* --- WhatsApp Flutuante --- */
         .float-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: 0.3s; }
         .float-wa:hover { transform: scale(1.1); }
+
+        /* --- Footer --- */
         footer { padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; color: var(--text-gray); font-size: 14px; }
-        .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; }
+        .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; transition: 0.2s; }
 
         @media (max-width: 768px) { .stats, .big-stats, .solutions-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 30px; } }
     </style>
@@ -136,33 +152,29 @@
         </section>
     </div>
 
+    <!-- Carrossel de Clientes -->
     <section class="trust">
         <div class="container">
             <h3>Quem já confia na Maré Flow</h3>
             <h2>Oficinas que já estão <span>crescendo com IA</span></h2>
         </div>
-
-        <!-- Carrossel com Dream e Turbo -->
         <div class="logo-carousel">
             <div class="logo-track">
-                <!-- Parte 1 -->
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                
-                <!-- Parte 2 (Repetição para Loop Infinito) -->
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <!-- Loop -->
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
             </div>
         </div>
-
         <div class="container">
             <div class="big-stats">
                 <div class="stat-item"><span class="stat-number">+20</span><span class="stat-label">Oficinas</span></div>
@@ -173,29 +185,44 @@
         </div>
     </section>
 
-    <section class="video-section">
-        <div class="container">
-            <h2 style="font-size: 38px; margin-bottom: 20px;">Descubra como a IA pode <span>revolucionar sua oficina</span></h2>
-            <div class="video-container">
-                <div class="play-btn"><i data-lucide="play" fill="currentColor" size="32"></i></div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Soluções Curtas -->
     <section class="solutions" id="solucoes">
         <div class="container">
             <div class="solutions-grid">
-                <div class="solution-card"><i data-lucide="users" class="sol-icon" size="36"></i><h4>CRM Inteligente</h4><p>Gerenciamento automatizado de clientes e vendas.</p></div>
-                <div class="solution-card"><i data-lucide="bot" class="sol-icon" size="36"></i><h4>Atendente de IA</h4><p>WhatsApp 24/7 para responder e agendar serviços.</p></div>
-                <div class="solution-card"><i data-lucide="bar-chart-2" class="sol-icon" size="36"></i><h4>Análise de Dados</h4><p>Dashboards estratégicos para seu lucro crescer.</p></div>
+                <div class="solution-card"><i data-lucide="users" class="sol-icon" size="36"></i><h4>CRM Inteligente</h4><p>Gerenciamento automatizado de clientes.</p></div>
+                <div class="solution-card"><i data-lucide="bot" class="sol-icon" size="36"></i><h4>Atendente de IA</h4><p>WhatsApp 24/7 para sua oficina.</p></div>
+                <div class="solution-card"><i data-lucide="bar-chart-2" class="sol-icon" size="36"></i><h4>Análise de Dados</h4><p>Decisões baseadas em números reais.</p></div>
             </div>
         </div>
     </section>
 
+    <!-- SEÇÃO CTA FINAL REVISADA (AGRESSIVA E IDENTICA AO MODELO) -->
     <section class="cta-section">
         <div class="container">
-            <h2>Pronto para transformar sua oficina?</h2>
-            <a href="https://wa.me/5548992233575" class="whatsapp-cta-btn"><i data-lucide="message-circle"></i> Falar pelo WhatsApp</a>
+            <!-- Badge -->
+            <div class="badge" style="margin-bottom: 25px;">
+                <i data-lucide="message-square" size="16"></i> Consultoria Gratuita
+            </div>
+            
+            <!-- Heading -->
+            <h2 style="font-size: clamp(36px, 6vw, 56px); line-height: 1.1;">
+                Pronto para revolucionar <br><span>sua oficina?</span>
+            </h2>
+            
+            <!-- Texto de Apoio -->
+            <p style="color: var(--text-gray); margin: 25px auto 40px; max-width: 700px; font-size: 18px;">
+                Agende uma conversa sem compromisso com nossos especialistas. Vamos analisar sua operação e mostrar como a tecnologia pode impulsionar seus resultados.
+            </p>
+            
+            <!-- Botão Principal -->
+            <a href="https://wa.me/55SEUNUMERO" class="whatsapp-cta-btn">
+                <i data-lucide="message-circle"></i> Falar pelo WhatsApp
+            </a>
+            
+            <!-- Subtexto -->
+            <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">
+                Resposta em menos de 2 horas • Sem compromisso
+            </p>
         </div>
     </section>
 
