@@ -33,19 +33,11 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Header com sua Logo --- */
-        header { 
-            padding: 40px 0; 
-            text-align: center; 
-        }
-        .main-logo {
-            height: 70px; /* Ajuste aqui se quiser a logo maior ou menor */
-            width: auto;
-            display: block;
-            margin: 0 auto;
-        }
+        /* --- Header --- */
+        header { padding: 40px 0; text-align: center; }
+        .main-logo { height: 70px; width: auto; display: block; margin: 0 auto; }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero { text-align: center; padding-bottom: 80px; }
         .badge {
             display: inline-flex; align-items: center; gap: 8px;
@@ -56,27 +48,23 @@
         .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; margin-bottom: 24px; line-height: 1.1; }
         .hero h1 span { color: var(--primary-blue); }
         .hero p { font-size: 18px; color: var(--text-gray); max-width: 700px; margin: 0 auto 40px; }
-        .hero-btns { display: flex; justify-content: center; gap: 20px; margin-bottom: 60px; }
         
+        .hero-btns { display: flex; justify-content: center; gap: 20px; margin-bottom: 60px; }
         .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
         .btn-primary { background-color: var(--primary-blue); color: var(--bg-color); }
         .btn-outline { border: 1px solid var(--primary-blue); color: var(--text-white); }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* Stats rápidas Hero */
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
         .stat-item { text-align: center; }
         .stat-icon { color: var(--primary-blue); margin-bottom: 12px; }
         .stat-number { font-size: 32px; font-weight: 700; display: block; }
-        .stat-label { color: var(--text-gray); font-size: 14px; }
 
         /* --- Seção de Confiança & Carrossel --- */
         .trust { padding: 100px 0; text-align: center; background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%); }
         .trust h3 { color: var(--primary-blue); text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
         .trust h2 { font-size: 36px; margin-bottom: 40px; }
-        .trust h2 span { color: var(--primary-blue); }
 
-        /* Carrossel Infinito Estilo Ticker */
+        /* Carrossel Infinito */
         .logo-carousel { 
             overflow: hidden; padding: 20px 0; position: relative; width: 100vw; 
             left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 60px;
@@ -85,204 +73,142 @@
         .logo-carousel::before { left: 0; top: 0; background: linear-gradient(to right, var(--bg-color), transparent); }
         .logo-carousel::after { right: 0; top: 0; background: linear-gradient(to left, var(--bg-color), transparent); }
         
-        .logo-track { display: flex; width: calc(250px * 18); animation: scroll 40s linear infinite; }
+        .logo-track { display: flex; width: calc(250px * 12); animation: scroll 30s linear infinite; }
         .logo-track:hover { animation-play-state: paused; }
-        .shop-tag { flex-shrink: 0; width: 230px; margin: 0 10px; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 18px; border-radius: 12px; color: var(--text-gray); font-weight: 600; text-align: center; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 9)); } }
+        
+        .shop-tag { flex-shrink: 0; width: 250px; margin: 0 10px; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+        
+        /* Estilo das logos dos clientes */
+        .client-logo { 
+            max-height: 50px; max-width: 190px; width: auto; height: auto; 
+            filter: grayscale(1) brightness(2.5); 
+            opacity: 0.7; transition: 0.3s; 
+        }
+        .shop-tag:hover .client-logo { filter: grayscale(0) brightness(1); opacity: 1; }
 
-        /* Stats Grandes Trust */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 6)); } }
+
         .big-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
 
-        /* --- Seção de Vídeo --- */
-        .video-section { padding: 100px 0; text-align: center; }
-        .video-container { 
-            width: 100%; max-width: 850px; aspect-ratio: 16 / 9; 
-            background: var(--card-bg); border-radius: 24px; margin: 40px auto 0; 
-            display: flex; align-items: center; justify-content: center; 
-            border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .play-btn { width: 85px; height: 85px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-color); cursor: pointer; transition: 0.3s; }
-        .play-btn:hover { transform: scale(1.1); }
-        .video-info { position: absolute; bottom: 30px; left: 30px; text-align: left; }
+        /* --- Vídeo --- */
+        .video-section { padding: 80px 0; text-align: center; }
+        .video-container { width: 100%; max-width: 850px; aspect-ratio: 16 / 9; background: var(--card-bg); border-radius: 24px; margin: 40px auto 0; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden; }
+        .play-btn { width: 80px; height: 80px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bg-color); cursor: pointer; }
 
-        /* --- Seção Soluções --- */
-        .solutions { padding: 120px 0; }
+        /* --- Soluções --- */
+        .solutions { padding: 100px 0; }
         .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
         .solution-card { background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; transition: 0.3s; text-align: left; }
-        .solution-card:hover { border-color: var(--primary-blue); transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 174, 239, 0.1); }
+        .solution-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); }
         .sol-icon { color: var(--primary-blue); margin-bottom: 24px; display: block; }
-        .solution-card h4 { margin-bottom: 18px; font-size: 22px; font-weight: 700; }
-        .solution-card p { color: var(--text-gray); font-size: 16px; }
 
-        /* --- CTA Final --- */
-        .cta-section { padding: 140px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.08)); }
-        .whatsapp-cta-btn { 
-            background: var(--primary-blue); color: var(--bg-color); padding: 20px 40px; 
-            border-radius: 12px; font-size: 20px; font-weight: 700; text-decoration: none; 
-            display: inline-flex; align-items: center; gap: 14px; margin: 40px 0 15px; transition: 0.3s;
-        }
-        .whatsapp-cta-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 174, 239, 0.4); }
-
-        /* --- WhatsApp Flutuante --- */
+        /* --- CTA & Footer --- */
+        .cta-section { padding: 120px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.05)); }
+        .whatsapp-cta-btn { background: var(--primary-blue); color: var(--bg-color); padding: 20px 40px; border-radius: 12px; font-size: 20px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 14px; margin-top: 30px; }
         .float-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: 0.3s; }
         .float-wa:hover { transform: scale(1.1); }
-
-        /* --- Footer --- */
         footer { padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; color: var(--text-gray); font-size: 14px; }
-        .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; transition: 0.2s; }
-        .footer-links a:hover { color: var(--primary-blue); }
+        .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; }
 
-        @media (max-width: 900px) { .solutions-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero-btns { flex-direction: column; }
-            .stats, .big-stats, .solutions-grid { grid-template-columns: 1fr; }
-            .big-stats { gap: 40px; }
-            footer { flex-direction: column; gap: 30px; text-align: center; }
-            .footer-links a { margin: 0 10px; }
-        }
+        @media (max-width: 768px) { .stats, .big-stats, .solutions-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 30px; } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo Header -->
         <header>
-            <img src="logo.png" alt="Maré Flow Logo" class="main-logo">
+            <img src="assets/logo.png" alt="Maré Flow Logo" class="main-logo">
         </header>
 
-        <!-- Seção Hero -->
         <section class="hero">
             <div class="badge"><i data-lucide="bot" size="18"></i> Consultoria em Tecnologia para Oficinas</div>
             <h1>Transforme sua oficina <br>com <span>Inteligência Artificial</span></h1>
-            <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados. Tudo que sua oficina mecânica precisa para crescer com tecnologia de ponta.</p>
+            <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados. Tecnologia de ponta para sua oficina mecânica crescer.</p>
             <div class="hero-btns">
                 <a href="https://wa.me/55SEUNUMERO" class="btn btn-primary">Fale com um Especialista <i data-lucide="arrow-right"></i></a>
                 <a href="#solucoes" class="btn btn-outline">Conheça as Soluções</a>
             </div>
-
-            <!-- Stats Rápidos -->
             <div class="stats">
-                <div class="stat-item"><i data-lucide="zap" class="stat-icon" size="28"></i><span class="stat-number">+50%</span><span class="stat-label">Aumento em vendas</span></div>
-                <div class="stat-item"><i data-lucide="bot" class="stat-icon" size="28"></i><span class="stat-number">24/7</span><span class="stat-label">Atendimento IA</span></div>
-                <div class="stat-item"><i data-lucide="bar-chart-3" class="stat-icon" size="28"></i><span class="stat-number">100%</span><span class="stat-label">Dados integrados</span></div>
+                <div class="stat-item"><i data-lucide="zap" class="stat-icon" size="28"></i><span class="stat-number">+50%</span><span class="stat-label">Vendas</span></div>
+                <div class="stat-item"><i data-lucide="bot" class="stat-icon" size="28"></i><span class="stat-number">24/7</span><span class="stat-label">Atendimento</span></div>
+                <div class="stat-item"><i data-lucide="bar-chart-3" class="stat-icon" size="28"></i><span class="stat-number">100%</span><span class="stat-label">Dados</span></div>
             </div>
         </section>
     </div>
 
-    <!-- Seção de Confiança & Carrossel -->
     <section class="trust">
         <div class="container">
             <h3>Quem já confia na Maré Flow</h3>
             <h2>Oficinas que já estão <span>crescendo com IA</span></h2>
         </div>
 
-        <!-- Carrossel -->
+        <!-- Carrossel com Dream e Turbo -->
         <div class="logo-carousel">
             <div class="logo-track">
-                <div class="shop-tag">Auto Tech</div><div class="shop-tag">Auto Center Silva</div><div class="shop-tag">Mecânica Express</div>
-                <div class="shop-tag">Oficina do João</div><div class="shop-tag">Car Service Pro</div><div class="shop-tag">Auto Elétrica Master</div>
-                <div class="shop-tag">Garage Premium</div><div class="shop-tag">Mecânica Total</div><div class="shop-tag">Premium Auto Care</div>
-                <!-- Loop -->
-                <div class="shop-tag">Auto Tech</div><div class="shop-tag">Auto Center Silva</div><div class="shop-tag">Mecânica Express</div>
-                <div class="shop-tag">Oficina do João</div><div class="shop-tag">Car Service Pro</div><div class="shop-tag">Auto Elétrica Master</div>
-                <div class="shop-tag">Garage Premium</div><div class="shop-tag">Mecânica Total</div><div class="shop-tag">Premium Auto Care</div>
+                <!-- Parte 1 -->
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                
+                <!-- Parte 2 (Repetição para Loop Infinito) -->
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
             </div>
         </div>
 
         <div class="container">
             <div class="big-stats">
-                <div class="stat-item"><span class="stat-number">+20</span><span class="stat-label">Oficinas atendidas</span></div>
-                <div class="stat-item"><span class="stat-number">+5k</span><span class="stat-label">Clientes impactados</span></div>
-                <div class="stat-item"><span class="stat-number">+R$2M</span><span class="stat-label">Em vendas geradas</span></div>
-                <div class="stat-item"><span class="stat-number">98%</span><span class="stat-label">Taxa de satisfação</span></div>
+                <div class="stat-item"><span class="stat-number">+20</span><span class="stat-label">Oficinas</span></div>
+                <div class="stat-item"><span class="stat-number">+5k</span><span class="stat-label">Clientes</span></div>
+                <div class="stat-item"><span class="stat-number">+R$2M</span><span class="stat-label">Vendas Geradas</span></div>
+                <div class="stat-item"><span class="stat-number">98%</span><span class="stat-label">Satisfação</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Vídeo (VSL) -->
     <section class="video-section">
         <div class="container">
-            <p style="color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 13px;">Veja como funciona</p>
-            <h2 style="font-size: 38px; margin: 15px 0 20px;">Descubra como a IA pode <span>revolucionar sua oficina</span></h2>
+            <h2 style="font-size: 38px; margin-bottom: 20px;">Descubra como a IA pode <span>revolucionar sua oficina</span></h2>
             <div class="video-container">
                 <div class="play-btn"><i data-lucide="play" fill="currentColor" size="32"></i></div>
-                <div class="video-info">
-                    <p style="font-size: 11px; opacity: 0.6; text-transform: uppercase;">Apresentação • 5 min</p>
-                    <p style="font-weight: 700; font-size: 18px;">Como aumentamos o faturamento em até 50%</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção Soluções -->
     <section class="solutions" id="solucoes">
         <div class="container">
-            <div style="text-align: center;">
-                <p style="color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 13px;">Nossas Soluções</p>
-                <h2 style="font-size: 40px; margin-top: 15px;">Tecnologia completa para <br>sua <span>oficina mecânica</span></h2>
-            </div>
             <div class="solutions-grid">
-                <div class="solution-card">
-                    <i data-lucide="users" class="sol-icon" size="36"></i>
-                    <h4>CRM Inteligente</h4>
-                    <p>Gerencie clientes, histórico de serviços e relacionamentos de forma automatizada.</p>
-                </div>
-                <div class="solution-card">
-                    <i data-lucide="bot" class="sol-icon" size="36"></i>
-                    <h4>Atendente de IA</h4>
-                    <p>Atendimento 24/7 via WhatsApp. Responda dúvidas e capture leads automaticamente.</p>
-                </div>
-                <div class="solution-card">
-                    <i data-lucide="clipboard-list" class="sol-icon" size="36"></i>
-                    <h4>Controle de OS</h4>
-                    <p>Sistema completo para gerenciar ordens de serviço com acompanhamento em tempo real.</p>
-                </div>
-                <div class="solution-card">
-                    <i data-lucide="bar-chart-2" class="sol-icon" size="36"></i>
-                    <h4>Análise de Dados</h4>
-                    <p>Dashboards estratégicos que transformam seus dados em decisões inteligentes.</p>
-                </div>
-                <div class="solution-card">
-                    <i data-lucide="target" class="sol-icon" size="36"></i>
-                    <h4>Tráfego Pago</h4>
-                    <p>Campanhas de marketing para atrair novos clientes com retorno sobre investimento garantido.</p>
-                </div>
-                <div class="solution-card">
-                    <i data-lucide="palette" class="sol-icon" size="36"></i>
-                    <h4>Design & Identidade</h4>
-                    <p>Criação de marca e materiais profissionais para transmitir confiança e autoridade.</p>
-                </div>
+                <div class="solution-card"><i data-lucide="users" class="sol-icon" size="36"></i><h4>CRM Inteligente</h4><p>Gerenciamento automatizado de clientes e vendas.</p></div>
+                <div class="solution-card"><i data-lucide="bot" class="sol-icon" size="36"></i><h4>Atendente de IA</h4><p>WhatsApp 24/7 para responder e agendar serviços.</p></div>
+                <div class="solution-card"><i data-lucide="bar-chart-2" class="sol-icon" size="36"></i><h4>Análise de Dados</h4><p>Dashboards estratégicos para seu lucro crescer.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Chamada Final -->
     <section class="cta-section">
         <div class="container">
-            <h2 style="font-size: clamp(32px, 5vw, 48px);">Pronto para revolucionar <span>sua oficina?</span></h2>
-            <a href="https://wa.me/55SEUNUMERO" class="whatsapp-cta-btn"><i data-lucide="message-circle"></i> Falar pelo WhatsApp</a>
-            <p style="font-size: 14px; opacity: 0.6;">Resposta em menos de 2 horas • Sem compromisso</p>
+            <h2>Pronto para transformar sua oficina?</h2>
+            <a href="https://wa.me/5548992233575" class="whatsapp-cta-btn"><i data-lucide="message-circle"></i> Falar pelo WhatsApp</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <div class="container">
         <footer>
-            <div>© 2026 Maré Flow. Todos os direitos reservados.</div>
-            <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="https://wa.me/55SEUNUMERO">WhatsApp</a>
-            </div>
+            <div>© 2026 Maré Flow.</div>
+            <div class="footer-links"><a href="#">Instagram</a><a href="https://wa.me/55SEUNUMERO">WhatsApp</a></div>
         </footer>
     </div>
 
-    <!-- Botão WhatsApp Flutuante -->
+    <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/55SEUNUMERO" class="float-wa" target="_blank"><i data-lucide="message-circle" size="36"></i></a>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
