@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maré Flow | Inteligência Artificial para Oficinas</title>
     
-    <!-- Importação de Fonte: Inter -->
+    <!-- Importação de Fonte -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons (Biblioteca de ícones) -->
+    <!-- Biblioteca de Ícones -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Google Tag Manager (Espaço para seu código) -->
-    <!-- Cole aqui seu script do GTM -->
 
     <style>
         :root {
@@ -36,6 +33,7 @@
             font-family: var(--font-main);
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .container {
@@ -44,21 +42,9 @@
             padding: 0 20px;
         }
 
-        /* --- Header --- */
         header {
             padding: 40px 0;
             text-align: center;
-        }
-
-        .logo {
-            width: 150px;
-            margin-bottom: 30px;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            padding-bottom: 80px;
         }
 
         .badge {
@@ -72,6 +58,11 @@
             border-radius: 50px;
             font-size: 14px;
             margin-bottom: 30px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0 80px;
         }
 
         .hero h1 {
@@ -111,22 +102,10 @@
             cursor: pointer;
         }
 
-        .btn-primary {
-            background-color: var(--primary-blue);
-            color: var(--bg-color);
-        }
+        .btn-primary { background-color: var(--primary-blue); color: var(--bg-color); }
+        .btn-outline { border: 1px solid var(--primary-blue); color: var(--text-white); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .btn-outline {
-            border: 1px solid var(--primary-blue);
-            color: var(--text-white);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        /* --- Mini Stats (abaixo do botão) --- */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -135,27 +114,11 @@
             margin: 40px auto 0;
         }
 
-        .stat-item {
-            text-align: center;
-        }
+        .stat-item { text-align: center; }
+        .stat-icon { color: var(--primary-blue); margin-bottom: 12px; }
+        .stat-number { font-size: 28px; font-weight: 700; display: block; }
+        .stat-label { color: var(--text-gray); font-size: 14px; }
 
-        .stat-icon {
-            color: var(--primary-blue);
-            margin-bottom: 12px;
-        }
-
-        .stat-number {
-            font-size: 28px;
-            font-weight: 700;
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        /* --- Seção de Confiança & Carrossel --- */
         .trust {
             padding: 80px 0;
             text-align: center;
@@ -170,49 +133,25 @@
             margin-bottom: 20px;
         }
 
-        .trust h2 {
-            font-size: 32px;
-            margin-bottom: 40px;
-        }
-
-        .trust h2 span {
-            color: var(--primary-blue);
-        }
-
-        /* Estilo do Carrossel Infinito */
+        /* Carrossel Infinito */
         .logo-carousel {
             overflow: hidden;
-            padding: 20px 0;
+            padding: 40px 0;
             position: relative;
-            width: 100vw;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            width: 100%;
             margin-bottom: 60px;
         }
 
-        /* Efeito de desfoque nas laterais */
-        .logo-carousel::before,
-        .logo-carousel::after {
-            content: "";
-            height: 100%;
-            position: absolute;
-            width: 15%;
-            z-index: 2;
-            pointer-events: none;
+        .logo-carousel::before, .logo-carousel::after {
+            content: ""; height: 100%; position: absolute; width: 15%; z-index: 2; pointer-events: none;
         }
         .logo-carousel::before { left: 0; top: 0; background: linear-gradient(to right, var(--bg-color), transparent); }
         .logo-carousel::after { right: 0; top: 0; background: linear-gradient(to left, var(--bg-color), transparent); }
 
         .logo-track {
             display: flex;
-            width: calc(250px * 16); /* Ajustado para o dobro de itens */
+            width: calc(250px * 16);
             animation: scroll 30s linear infinite;
-        }
-
-        .logo-track:hover {
-            animation-play-state: paused;
         }
 
         .shop-tag {
@@ -225,137 +164,121 @@
             border-radius: 12px;
             color: var(--text-gray);
             font-weight: 600;
-            white-space: nowrap;
         }
 
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 8)); } /* Move metade da lista total */
+            100% { transform: translateX(calc(-250px * 8)); }
         }
 
-        .big-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        /* --- Seção de Vídeo (VSL) --- */
-        .video-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
+        .video-section { padding: 80px 0; text-align: center; }
         .video-container {
-            width: 100%;
-            max-width: 850px;
-            aspect-ratio: 16 / 9;
-            background: var(--card-bg);
-            border-radius: 20px;
-            margin: 40px auto 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .play-btn {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-color);
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .play-btn:hover { transform: scale(1.1); }
-
-        .video-info {
-            position: absolute;
-            bottom: 25px;
-            left: 25px;
-            text-align: left;
-        }
-
-        /* --- Seção Soluções --- */
-        .solutions {
-            padding: 100px 0;
+            width: 100%; max-width: 850px; aspect-ratio: 16 / 9;
+            background: var(--card-bg); border-radius: 20px; margin: 40px auto 0;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1); position: relative;
         }
 
         .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 60px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;
         }
 
         .solution-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 32px;
-            border-radius: 16px;
-            transition: 0.3s;
+            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 32px; border-radius: 16px; transition: 0.3s; text-align: left;
         }
 
-        .solution-card:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 174, 239, 0.1);
-        }
-
-        .sol-icon-box {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 174, 239, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            margin-bottom: 24px;
-        }
-
-        .solution-card h4 {
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .solution-card p {
-            color: var(--text-gray);
-            font-size: 15px;
-        }
-
-        /* --- CTA Final --- */
-        .cta-footer {
-            padding: 120px 0;
-            text-align: center;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 174, 239, 0.08) 100%);
-        }
-
-        .whatsapp-cta {
-            background: var(--primary-blue);
-            color: var(--bg-color);
-            padding: 18px 36px;
-            border-radius: 12px;
-            font-size: 20px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            margin: 40px 0 15px;
-            transition: 0.3s;
-        }
-        .whatsapp-cta:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 174, 239, 0.3); }
-
-        /* --- Botão Flutuante do WhatsApp --- */
         .float-whatsapp {
-            position: fixed;
-            bottom: 30px
+            position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+            background-color: #25d366; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; color: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3); z-index: 1000;
+        }
+
+        footer {
+            padding: 50px 0; border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; justify-content: space-between; color: var(--text-gray); font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-btns { flex-direction: column; }
+            .stats, .solutions-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; text-align: center; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div style="font-size: 28px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <i data-lucide="waves" style="color: var(--primary-blue);"></i> Maré Flow
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="badge"><i data-lucide="bot" size="18"></i> Consultoria em Tecnologia para Oficinas</div>
+            <h1>Transforme sua oficina <br>com <span>Inteligência Artificial</span></h1>
+            <p>CRM, atendentes virtuais e análise de dados. O futuro da gestão automotiva chegou.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Fale com um Especialista <i data-lucide="arrow-right"></i></a>
+                <a href="#solucoes" class="btn btn-outline">Conheça as Soluções</a>
+            </div>
+        </section>
+    </div>
+
+    <section class="trust">
+        <div class="container">
+            <h3>Quem já confia na Maré Flow</h3>
+            <h2>Oficinas que já estão <span>crescendo com IA</span></h2>
+        </div>
+        <div class="logo-carousel">
+            <div class="logo-track">
+                <div class="shop-tag">Auto Tech</div><div class="shop-tag">Auto Center Silva</div>
+                <div class="shop-tag">Mecânica Express</div><div class="shop-tag">Oficina do João</div>
+                <div class="shop-tag">Car Service Pro</div><div class="shop-tag">Auto Elétrica Master</div>
+                <div class="shop-tag">Garage Premium</div><div class="shop-tag">Mecânica Total</div>
+                <!-- Repetição para Loop -->
+                <div class="shop-tag">Auto Tech</div><div class="shop-tag">Auto Center Silva</div>
+                <div class="shop-tag">Mecânica Express</div><div class="shop-tag">Oficina do João</div>
+                <div class="shop-tag">Car Service Pro</div><div class="shop-tag">Auto Elétrica Master</div>
+                <div class="shop-tag">Garage Premium</div><div class="shop-tag">Mecânica Total</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="solucoes">
+        <section class="solutions-grid">
+            <div class="solution-card">
+                <i data-lucide="users" style="color: var(--primary-blue); margin-bottom: 20px;"></i>
+                <h4>CRM Inteligente</h4>
+                <p>Gerencie clientes e histórico de serviços de forma automatizada.</p>
+            </div>
+            <div class="solution-card">
+                <i data-lucide="bot" style="color: var(--primary-blue); margin-bottom: 20px;"></i>
+                <h4>Atendente de IA</h4>
+                <p>Atendimento 24/7 via WhatsApp para agendamentos e dúvidas.</p>
+            </div>
+            <div class="solution-card">
+                <i data-lucide="pie-chart" style="color: var(--primary-blue); margin-bottom: 20px;"></i>
+                <h4>Análise de Dados</h4>
+                <p>Dashboards estratégicos para tomar melhores decisões.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2026 Maré Flow. Todos os direitos reservados.</div>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" style="color: var(--text-gray); text-decoration: none;">Instagram</a>
+                <a href="#" style="color: var(--text-gray); text-decoration: none;">WhatsApp</a>
+            </div>
+        </footer>
+    </div>
+
+    <a href="#" class="float-whatsapp"><i data-lucide="message-circle" size="36"></i></a>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
