@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TSHDRMRG');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maré Flow | Inteligência Artificial para Oficinas</title>
     
-    <!-- Font Inter -->
+    <!-- Fonte Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Ícones Lucide -->
@@ -23,7 +31,6 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Garante que o scroll comece do topo */
         html, body { scroll-behavior: smooth; }
 
         body {
@@ -71,7 +78,7 @@
         .stat-icon { color: var(--primary-blue); margin-bottom: 12px; }
         .stat-number { font-size: 32px; font-weight: 700; display: block; }
 
-        /* --- Seção Trust & Carrossel (O que tinha sumido) --- */
+        /* --- Seção Trust & Carrossel --- */
         .trust { padding: 100px 0; text-align: center; background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%); }
         .trust h3 { color: var(--primary-blue); text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
         .trust h2 { font-size: 36px; margin-bottom: 50px; }
@@ -114,6 +121,7 @@
         .solution-card:hover { border-color: var(--primary-blue); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 174, 239, 0.2); }
         .sol-icon-box { color: var(--primary-blue); background: rgba(0, 174, 239, 0.1); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 14px; margin-bottom: 25px; }
         .solution-card h4 { margin-bottom: 15px; font-size: 22px; font-weight: 700; }
+        .solution-card p { color: var(--text-gray); font-size: 15px; }
 
         /* --- CTA Final Agressivo --- */
         .cta-section { padding: 140px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.1)); }
@@ -123,7 +131,6 @@
 
         /* --- Floating WhatsApp --- */
         .float-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 8px 25px rgba(0,0,0,0.4); z-index: 1000; transition: 0.3s; text-decoration: none; }
-        .float-wa:hover { transform: scale(1.15); }
 
         footer { padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; color: var(--text-gray); font-size: 14px; }
         .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; }
@@ -137,6 +144,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSHDRMRG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- SCRIPT PARA FORÇAR INÍCIO NO TOPO -->
     <script>
@@ -167,7 +178,7 @@
         </section>
     </div>
 
-    <!-- Seção Trust com Carrossel Infinito (Turbo e Dream) -->
+    <!-- Seção Trust com Carrossel Infinito -->
     <section class="trust">
         <div class="container">
             <h3>Quem já confia na Maré Flow</h3>
@@ -182,7 +193,6 @@
                 <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
                 <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
                 <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
-                <!-- Repetição para Loop Infinito -->
                 <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
                 <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
                 <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
@@ -213,7 +223,7 @@
         </div>
     </section>
 
-    <!-- Seção Soluções Completa -->
+    <!-- Seção Soluções -->
     <section class="solutions" id="solucoes">
         <div class="container">
             <h3>Nossas Soluções</h3>
@@ -221,36 +231,12 @@
             <p class="section-desc">Combinamos inteligência artificial, marketing digital e sistemas personalizados para transformar a gestão da sua oficina.</p>
 
             <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="users"></i></div>
-                    <h4>CRM Inteligente</h4>
-                    <p>Gerencie clientes, histórico de serviços e relacionamentos de forma automatizada. Nunca mais perca uma oportunidade de venda.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="bot"></i></div>
-                    <h4>Atendente de IA</h4>
-                    <p>Atendimento 24/7 via WhatsApp. Responda dúvidas, agende serviços e capture leads mesmo fora do horário comercial.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div>
-                    <h4>Controle de OS</h4>
-                    <p>Sistema completo para gerenciar ordens de serviço, peças, mão de obra e acompanhamento em tempo real.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div>
-                    <h4>Análise de Dados</h4>
-                    <p>Dashboards inteligentes que transformam seus dados em insights para tomar decisões mais estratégicas.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="target"></i></div>
-                    <h4>Tráfego Pago</h4>
-                    <p>Campanhas de marketing digital focadas em atrair novos clientes para sua oficina com ROI garantido.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon-box"><i data-lucide="cpu"></i></div>
-                    <h4>Automação de Processos</h4>
-                    <p>Otimize sua rotina com integrações inteligentes que eliminam tarefas repetitivas e aumentam a produtividade.</p>
-                </div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="users"></i></div><h4>CRM Inteligente</h4><p>Gerencie clientes, histórico de serviços e relacionamentos de forma automatizada.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bot"></i></div><h4>Atendente de IA</h4><p>Atendimento 24/7 via WhatsApp. Responda dúvidas, agende serviços e capture leads.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div><h4>Controle de OS</h4><p>Sistema completo para gerenciar ordens de serviço e acompanhamento em tempo real.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div><h4>Análise de Dados</h4><p>Dashboards inteligentes que transformam seus dados em insights estratégicos.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="target"></i></div><h4>Tráfego Pago</h4><p>Campanhas de marketing digital focadas em atrair novos clientes com ROI garantido.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="cpu"></i></div><h4>Automação</h4><p>Otimize sua rotina com integrações inteligentes que eliminam tarefas repetitivas.</p></div>
             </div>
         </div>
     </section>
@@ -262,7 +248,6 @@
             <h2 style="font-size: clamp(36px, 6vw, 60px); font-weight: 800; line-height: 1.1;">Pronto para revolucionar <br><span>sua oficina?</span></h2>
             <p style="color: var(--text-gray); margin: 25px auto 40px; max-width: 750px; font-size: 20px;">Agende uma conversa sem compromisso com nossos especialistas. Vamos analisar sua operação e mostrar como a tecnologia pode impulsionar seus resultados.</p>
             <a href="https://wa.me/55SEUNUMERO?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações" class="whatsapp-cta-btn"><i data-lucide="message-circle"></i> Falar pelo WhatsApp</a>
-    
         </div>
     </section>
 
@@ -281,7 +266,6 @@
 
     <script>
         lucide.createIcons();
-        // Garante scroll no topo ao recarregar
         window.scrollTo(0, 0);
     </script>
 </body>
