@@ -79,20 +79,28 @@
         .stat-number { font-size: 32px; font-weight: 700; display: block; }
 
         /* --- Seção Trust & Carrossel --- */
-        .trust { padding: 80px 0; text-align: center; background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%); }
+        .trust { padding: 100px 0; text-align: center; background: radial-gradient(circle at center, rgba(0, 174, 239, 0.05) 0%, transparent 70%); }
         .trust h3 { color: var(--primary-blue); text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; font-weight: 700; }
-        .trust h2 { font-size: 36px; margin-bottom: 40px; }
+        .trust h2 { font-size: 36px; margin-bottom: 50px; }
 
-        .logo-carousel { overflow: hidden; padding: 30px 0; position: relative; width: 100vw; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+        .logo-carousel { 
+            overflow: hidden; padding: 30px 0; position: relative; width: 100vw; 
+            left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 20px;
+        }
         .logo-carousel::before, .logo-carousel::after { content: ""; height: 100%; position: absolute; width: 20%; z-index: 2; pointer-events: none; }
         .logo-carousel::before { left: 0; top: 0; background: linear-gradient(to right, var(--bg-color), transparent); }
         .logo-carousel::after { right: 0; top: 0; background: linear-gradient(to left, var(--bg-color), transparent); }
+        
         .logo-track { display: flex; width: calc(260px * 12); animation: scroll 35s linear infinite; }
+        .logo-track:hover { animation-play-state: paused; }
+        
         .shop-tag { flex-shrink: 0; width: 240px; margin: 0 10px; background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
         .client-logo { max-height: 55px; max-width: 190px; filter: grayscale(1) brightness(2.5); opacity: 0.7; transition: 0.4s; }
+        .shop-tag:hover .client-logo { filter: grayscale(0) brightness(1); opacity: 1; }
+
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-260px * 6)); } }
 
-        /* --- SEÇÃO NOVA: Por que a Maré Flow (IGUAL AO PRINT) --- */
+        /* --- SEÇÃO: Por que a Maré Flow? --- */
         .why-us { padding: 100px 0; }
         .why-us h3 { color: var(--primary-blue); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
         .why-us h2 { font-size: clamp(30px, 4vw, 48px); font-weight: 800; line-height: 1.2; margin-bottom: 30px; }
@@ -110,28 +118,97 @@
 
         /* --- Seção Soluções --- */
         .solutions { padding: 100px 0; text-align: center; }
+        .solutions h3 { color: var(--primary-blue); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
         .solutions h2 { font-size: 42px; margin-bottom: 20px; }
         .solutions .section-desc { color: var(--text-gray); max-width: 750px; margin: 0 auto 60px; font-size: 18px; }
+
         .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .solution-card { background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 22px; transition: 0.3s; text-align: left; }
+        .solution-card { 
+            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 40px; border-radius: 22px; transition: 0.3s; text-align: left; 
+        }
         .solution-card:hover { border-color: var(--primary-blue); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 174, 239, 0.2); }
         .sol-icon-box { color: var(--primary-blue); background: rgba(0, 174, 239, 0.1); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 14px; margin-bottom: 25px; }
+        .solution-card h4 { margin-bottom: 15px; font-size: 22px; font-weight: 700; }
+        .solution-card p { color: var(--text-gray); font-size: 15px; }
 
-        /* --- CTA Final Agressivo --- */
+        /* --- CTA Final --- */
         .cta-section { padding: 140px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.1)); }
         .cta-section h2 span { color: var(--primary-blue); }
         .whatsapp-cta-btn { background: var(--primary-blue); color: var(--bg-color); padding: 22px 50px; border-radius: 14px; font-size: 22px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 14px; margin-top: 40px; transition: 0.3s; }
+        .whatsapp-cta-btn:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(0, 174, 239, 0.5); }
 
         /* --- Floating WhatsApp --- */
         .float-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 8px 25px rgba(0,0,0,0.4); z-index: 1000; transition: 0.3s; text-decoration: none; }
+        .float-wa:hover { transform: scale(1.15); }
 
-        footer { padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center; color: var(--text-gray); font-size: 14px; }
-        .footer-links a { color: var(--text-gray); text-decoration: none; margin-left: 25px; }
+        /* --- NOVO RODAPÉ ROBUSTO --- */
+        footer { 
+            background-color: var(--card-bg); 
+            padding: 80px 0 40px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 50px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            color: var(--text-gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .footer-links-list { list-style: none; }
+        .footer-links-list li { margin-bottom: 12px; }
+        .footer-links-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .footer-links-list a:hover { color: var(--primary-blue); }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 10px; }
+        .social-icon {
+            width: 40px; height: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-gray);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-icon:hover { background: var(--primary-blue); color: var(--bg-color); }
 
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-gray);
+            font-size: 13px;
+        }
+
+        @media (max-width: 992px) { 
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; } 
+            .social-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
         @media (max-width: 768px) { 
             .stats, .solutions-grid { grid-template-columns: 1fr; } 
             .hero h1 { font-size: 38px; }
-            footer { flex-direction: column; gap: 30px; text-align: center; } 
         }
     </style>
 </head>
@@ -170,31 +247,32 @@
         </section>
     </div>
 
-    <!-- Seção Parceiros (Carrossel) -->
+    <!-- Seção Trust com Carrossel Infinito -->
     <section class="trust">
         <div class="container">
             <h3>Quem já confia na Maré Flow</h3>
             <h2>Oficinas que já estão <span>crescendo com IA</span></h2>
         </div>
+
         <div class="logo-carousel">
             <div class="logo-track">
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/dream.png" class="client-logo"></div>
-                <div class="shop-tag"><img src="assets/turbo.png" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/dream.png" alt="Dream" class="client-logo"></div>
+                <div class="shop-tag"><img src="assets/turbo.png" alt="Turbo" class="client-logo"></div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO NOVA: Por que a Maré Flow? -->
+    <!-- SEÇÃO: Por que a Maré Flow? -->
     <section class="why-us">
         <div class="container">
             <h3>POR QUE A MARÉ FLOW?</h3>
@@ -212,7 +290,7 @@
         </div>
     </section>
 
-    <!-- Seção de Vídeo -->
+    <!-- Seção de Vídeo YouTube -->
     <section class="video-section">
         <div class="container">
             <p style="color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px;">Veja como funciona</p>
@@ -223,24 +301,25 @@
         </div>
     </section>
 
-    <!-- Seção Soluções -->
+    <!-- Seção Soluções Completa -->
     <section class="solutions" id="solucoes">
         <div class="container">
+            <h3>Nossas Soluções</h3>
             <h2>Tecnologia completa para <br>sua <span>oficina mecânica</span></h2>
             <p class="section-desc">Combinamos inteligência artificial, marketing digital e sistemas personalizados para transformar a gestão da sua oficina.</p>
 
             <div class="solutions-grid">
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="users"></i></div><h4>CRM Inteligente</h4><p>Gerencie clientes e relacionamentos de forma automatizada.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bot"></i></div><h4>Atendente de IA</h4><p>Atendimento 24/7 via WhatsApp. Responda dúvidas e agende serviços.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div><h4>Controle de OS</h4><p>Sistema completo para gerenciar ordens de serviço em tempo real.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div><h4>Análise de Dados</h4><p>Dashboards que transformam seus dados em insights estratégicos.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="target"></i></div><h4>Tráfego Pago</h4><p>Campanhas de marketing digital focadas em atrair novos clientes.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="cpu"></i></div><h4>Automação</h4><p>Otimize sua rotina com integrações que eliminam tarefas repetitivas.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="users"></i></div><h4>CRM Inteligente</h4><p>Gerencie clientes, histórico de serviços e relacionamentos de forma automatizada.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bot"></i></div><h4>Atendente de IA</h4><p>Atendimento 24/7 via WhatsApp. Responda dúvidas, agende serviços e capture leads.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div><h4>Controle de OS</h4><p>Sistema completo para gerenciar ordens de serviço, peças e mão de obra em tempo real.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div><h4>Análise de Dados</h4><p>Dashboards inteligentes que transformam seus dados em insights para tomar decisões.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="target"></i></div><h4>Tráfego Pago</h4><p>Campanhas de marketing digital focadas em atrair novos clientes para sua oficina.</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="cpu"></i></div><h4>Automação</h4><p>Otimize sua rotina com integrações inteligentes que eliminam tarefas repetitivas.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final AGRESSIVO -->
+    <!-- CTA Final Agressivo -->
     <section class="cta-section">
         <div class="container">
             <div class="badge" style="margin-bottom: 25px;"><i data-lucide="message-square" size="16"></i> Consultoria Gratuita</div>
@@ -250,12 +329,53 @@
         </div>
     </section>
 
+    <!-- NOVO RODAPÉ ROBUSTO -->
     <footer>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <div>© 2026 Maré Flow.</div>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/mare.flow/" target="_blank">Instagram</a>
-                <a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações">WhatsApp</a>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Coluna 1: Sobre -->
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <img src="assets/logo.png" alt="Maré Flow" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--primary-blue);">
+                        <span style="font-weight: 800; font-size: 20px; color: #fff;">Maré Flow</span>
+                    </div>
+                    <p>O parceiro estratégico de tecnologia número 1 para oficinas mecânicas. Nossa missão é levar a inteligência artificial para o centro da sua gestão automotiva.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mare.flow/" target="_blank" class="social-icon"><i data-lucide="instagram" size="20"></i></a>
+                        <a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações" target="_blank" class="social-icon"><i data-lucide="message-circle" size="20"></i></a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Navegação -->
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#solucoes">Nossas Soluções</a></li>
+                        <li><a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações">Consultoria Gratuita</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Contato -->
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>Tem alguma dúvida? Fale diretamente com o nosso time técnico para entender como a IA se aplica ao seu modelo de negócio.</p>
+                    <ul class="footer-links-list">
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-gray);">
+                            <i data-lucide="mail" size="16" color="#00aeef"></i> contato@mareflow.com
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-gray);">
+                            <i data-lucide="phone" size="16" color="#00aeef"></i> (48) 99223-3575
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div>© 2026 Maré Flow. Todos os direitos reservados.</div>
+                <div>CNPJ: 00.000.000/0001-00 | Florianópolis - SC</div>
             </div>
         </div>
     </footer>
