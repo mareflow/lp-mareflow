@@ -131,6 +131,21 @@
         .solution-card h4 { margin-bottom: 15px; font-size: 22px; font-weight: 700; }
         .solution-card p { color: var(--text-gray); font-size: 15px; }
 
+        /* --- Novas Seções (Estilos Adicionais) --- */
+        .proof-grid, .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 50px; }
+        .proof-card, .showcase-item { 
+            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 24px; overflow: hidden; min-height: 300px;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            color: var(--text-gray); border: 1px dashed rgba(0, 174, 239, 0.3);
+        }
+        .partnership-box { 
+            background: linear-gradient(135deg, var(--card-bg) 0%, #0d1a35 100%);
+            padding: 60px; border-radius: 30px; border: 1px solid rgba(0, 174, 239, 0.2);
+            text-align: left; margin-top: 50px;
+        }
+        .placeholder-icon { color: var(--primary-blue); margin-bottom: 15px; opacity: 0.5; }
+
         /* --- CTA Final --- */
         .cta-section { padding: 140px 0; text-align: center; background: linear-gradient(180deg, transparent, rgba(0, 174, 239, 0.1)); }
         .cta-section h2 span { color: var(--primary-blue); }
@@ -204,6 +219,7 @@
             .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; } 
             .social-links { justify-content: center; }
             .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .proof-grid, .showcase-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) { 
             .stats, .solutions-grid { grid-template-columns: 1fr; } 
@@ -230,8 +246,8 @@
 
         <section class="hero">
             <div class="badge"><i data-lucide="bot" size="18"></i> Consultoria em Tecnologia para Oficinas</div>
-            <h1>Transforme sua oficina <br>com <span>Tecnologia Inteligência Artificial</span></h1>
-            <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados. Tecnologia de ponta para sua oficina mecânica crescer e faturar mais.</p>
+            <h1>Transforme sua oficina <br>com <span>Tecnologia e Inteligência Artificial</span></h1>
+            <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados e análise de Tráfego pago. Tecnologia de ponta para sua oficina mecânica crescer e faturar mais.</p>
             
             <div class="hero-btns">
                 <a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações" class="btn btn-primary">Fale com um Especialista <i data-lucide="arrow-right"></i></a>
@@ -244,7 +260,7 @@
             </div>
 
             <div class="stats">
-                <div class="stat-item"><i data-lucide="zap" class="stat-icon" size="28"></i><span class="stat-number">+50%</span><span class="stat-label">Vendas</span></div>
+                <div class="stat-item"><i data-lucide="zap" class="stat-icon" size="28"></i><span class="stat-number">100%</span><span class="stat-label">Personalizado</span></div>
                 <div class="stat-item"><i data-lucide="bot" class="stat-icon" size="28"></i><span class="stat-number">24/7</span><span class="stat-label">Atendimento IA</span></div>
                 <div class="stat-item"><i data-lucide="bar-chart-3" class="stat-icon" size="28"></i><span class="stat-number">100%</span><span class="stat-label">Dados Integrados</span></div>
             </div>
@@ -306,8 +322,76 @@
                 <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bot"></i></div><h4>Atendente de IA</h4><p>Atendimento 24/7 via WhatsApp. Responda dúvidas, agende serviços e capture leads.</p></div>
                 <div class="solution-card"><div class="sol-icon-box"><i data-lucide="clipboard-list"></i></div><h4>Controle de OS</h4><p>Sistema completo para gerenciar ordens de serviço, peças e mão de obra em tempo real.</p></div>
                 <div class="solution-card"><div class="sol-icon-box"><i data-lucide="bar-chart-2"></i></div><h4>Análise de Dados</h4><p>Dashboards inteligentes que transformam seus dados em insights para tomar decisões.</p></div>
-                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="target"></i></div><h4>Ferramentas de IA</h4><p>Utilize as novas ferramentas de IA, para seu marketing e gestão</p></div>
+                <div class="solution-card"><div class="sol-icon-box"><i data-lucide="target"></i></div><h4>Análise de Marketing</h4><p>Faça o rastreio de campanhas de tráfego para gerenciar seus investimentos</p></div>
                 <div class="solution-card"><div class="sol-icon-box"><i data-lucide="cpu"></i></div><h4>Automação</h4><p>Otimize sua rotina com integrações inteligentes que eliminam tarefas repetitivas.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIMEIRA NOVA SEÇÃO: Provas Sociais -->
+    <section class="social-proof" style="padding: 100px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: var(--primary-blue); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">PROVAS SOCIAIS</h3>
+            <h2 style="font-size: 42px; margin-bottom: 20px;">Depoimentos de quem já <span>mudou de nível</span></h2>
+            <p style="color: var(--text-gray); max-width: 750px; margin: 0 auto; font-size: 18px;">Veja os resultados reais e a satisfação de donos de oficinas que confiaram na nossa tecnologia.</p>
+            
+            <div class="proof-grid">
+                <!-- Modelo de Vídeo -->
+                <div class="proof-card">
+                    <i data-lucide="play-circle" class="placeholder-icon" size="48"></i>
+                    <p>Espaço para Vídeo Depoimento</p>
+                </div>
+                <!-- Modelo de Foto/Texto -->
+                <div class="proof-card">
+                    <i data-lucide="image" class="placeholder-icon" size="48"></i>
+                    <p>Espaço para Foto e Relato de Cliente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEGUNDA NOVA SEÇÃO: Parceria e Comunidade -->
+    <section class="partnership-community" style="padding: 100px 0; text-align: center; background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="partnership-box">
+                <h3 style="color: var(--primary-blue); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">MUITO ALÉM DE UM SOFTWARE</h3>
+                <h2 style="font-size: 42px; margin-bottom: 25px;">Uma Parceria Estratégica e <span>Comunidade Exclusiva</span></h2>
+                <p style="color: var(--text-gray); font-size: 18px; margin-bottom: 30px; max-width: 800px;">
+                    Ao se tornar cliente Maré Flow, você não adquire apenas tecnologia. Você entra para uma comunidade de elite de líderes do setor automotivo, focada em troca de experiências, melhores práticas e inovação constante.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div class="benefit-item"><i data-lucide="users" class="benefit-icon"></i> Networking com Líderes</div>
+                    <div class="benefit-item"><i data-lucide="messages-square" class="benefit-icon"></i> Troca de Experiências</div>
+                    <div class="benefit-item"><i data-lucide="trending-up" class="benefit-icon"></i> Tendências do Setor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERCEIRA NOVA SEÇÃO: Soluções na Prática -->
+    <section class="solutions-showcase" style="padding: 100px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: var(--primary-blue); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">TECNOLOGIA NA PRÁTICA</h3>
+            <h2 style="font-size: 42px; margin-bottom: 20px;">Veja nossas <span>Soluções em Ação</span></h2>
+            <p style="color: var(--text-gray); max-width: 750px; margin: 0 auto; font-size: 18px;">Confira demonstrações reais das nossas interfaces, dashboards e automações funcionando no dia a dia.</p>
+            
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <i data-lucide="layout" class="placeholder-icon" size="48"></i>
+                    <p>Interface do CRM Inteligente</p>
+                </div>
+                <div class="showcase-item">
+                    <i data-lucide="smartphone" class="placeholder-icon" size="48"></i>
+                    <p>Atendente IA no WhatsApp</p>
+                </div>
+                <div class="showcase-item">
+                    <i data-lucide="pie-chart" class="placeholder-icon" size="48"></i>
+                    <p>Dashboard de Análise de Dados</p>
+                </div>
+                <div class="showcase-item">
+                    <i data-lucide="play" class="placeholder-icon" size="48"></i>
+                    <p>Vídeo de Demonstração Geral</p>
+                </div>
             </div>
         </div>
     </section>
@@ -332,7 +416,7 @@
                         <img src="assets/logo.png" alt="Maré Flow" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--primary-blue);">
                         <span style="font-weight: 800; font-size: 20px; color: #fff;">Maré Flow</span>
                     </div>
-                    <p>O parceiro estratégico de tecnologia número 1 para oficinas mecânicas. Nossa missão é levar a inteligência artificial para o centro da sua gestão automotiva.</p>
+                    <p>O parceiro estratégico de tecnologia número 1 para oficinas mecânicas. Nossa missão é levar a inteligência artificial e tecnologia para o centro da sua gestão automotiva.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/mare.flow/" target="_blank" class="social-icon"><i data-lucide="instagram" size="20"></i></a>
                         <a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações" target="_blank" class="social-icon"><i data-lucide="message-circle" size="20"></i></a>
