@@ -73,7 +73,7 @@
         .btn-outline { border: 1px solid var(--primary-blue); color: var(--text-white); }
         .btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 850px; margin: 0 auto; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 850px; margin: 20px auto 0; }
         .stat-item { text-align: center; }
         .stat-icon { color: var(--primary-blue); margin-bottom: 12px; }
         .stat-number { font-size: 32px; font-weight: 700; display: block; }
@@ -112,8 +112,7 @@
         .benefit-icon { color: var(--primary-blue); flex-shrink: 0; }
 
         /* --- Vídeo YouTube --- */
-        .video-section { padding: 80px 0; text-align: center; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 900px; margin: 40px auto 0; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 900px; margin: 40px auto 40px; border-radius: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.1); }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         /* --- Seção Soluções --- */
@@ -231,12 +230,17 @@
 
         <section class="hero">
             <div class="badge"><i data-lucide="bot" size="18"></i> Consultoria em Tecnologia para Oficinas</div>
-            <h1>Transforme sua oficina <br>com <span>Inteligência Artificial</span></h1>
+            <h1>Transforme sua oficina <br>com <span>Tecnologia Inteligência Artificial</span></h1>
             <p>CRM, atendentes virtuais, controle de ordens de serviço e análise de dados. Tecnologia de ponta para sua oficina mecânica crescer e faturar mais.</p>
             
             <div class="hero-btns">
                 <a href="https://wa.me/5548992233575?text=Olá%2C%20estava%20em%20seu%20site%20e%20gostaria%20de%20mais%20informações" class="btn btn-primary">Fale com um Especialista <i data-lucide="arrow-right"></i></a>
                 <a href="#solucoes" class="btn btn-outline">Conheça as Soluções</a>
+            </div>
+
+            <!-- Vídeo movido para a primeira dobra -->
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/S_8j2GZ8Sms?si=P2p28UeH-40B6pX7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
 
             <div class="stats">
@@ -287,17 +291,6 @@
                 <li class="benefit-item"><i data-lucide="check-circle" class="benefit-icon"></i> Tome decisões baseadas em dados concretos</li>
                 <li class="benefit-item"><i data-lucide="check-circle" class="benefit-icon"></i> Destaque-se da concorrência com tecnologia de ponta</li>
             </ul>
-        </div>
-    </section>
-
-    <!-- Seção de Vídeo YouTube -->
-    <section class="video-section">
-        <div class="container">
-            <p style="color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px;">Veja como funciona</p>
-            <h2 style="font-size: 40px; margin: 15px 0 25px; line-height: 1.2;">Descubra como a IA pode <br><span>revolucionar sua oficina</span></h2>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
         </div>
     </section>
 
